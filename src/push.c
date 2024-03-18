@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_2.c                                   :+:      :+:    :+:   */
+/*   movements_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 15:15:20 by vnieto-j          #+#    #+#             */
-/*   Updated: 2024/03/18 12:24:34 by dperez-a         ###   ########.fr       */
+/*   Updated: 2024/03/18 16:08:42 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	reverse_rotate_r(t_node **stack_a, t_node **stack_b, char c)
-{
-	reverse_rotate(*&stack_a, c);
-	reverse_rotate(*&stack_b, c);
-	ft_printf("rrr\n");
-}
 
 void	push_a(t_node **stack_a, t_node **stack_b)
 {

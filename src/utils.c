@@ -6,7 +6,7 @@
 /*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 16:41:18 by vnieto-j          #+#    #+#             */
-/*   Updated: 2024/03/18 12:27:56 by dperez-a         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:50:48 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,31 +22,35 @@ int	ft_strcmp(const char *s1, const char *s2)
 	return (*s1 - *s2);
 }
 
-int	ft_atoi_ovrflw(const char *string, t_node **stack)
+int	ft_atol_ovrflw(const char *string, t_node **stack)
 {
-	int	res;
-	int	signe;
+	long	res;
+	long	sign;
+	int		has_sign;
 
-	signe = 1;
 	res = 0;
-	if (ft_strcmp(string, "-2147483648") == 0)
+	sign = 1;
+	has_sign = 0;
+	if (!string || ft_strcmp(string, "-2147483648") == 0)
 		return (-2147483648);
-	if (*string == '-' || *string == '+')
+	while (*string != '\0')
 	{
-		if (*string == '-')
-			signe *= -1;
-		string++;
-	}
-	while (*string >= '0' && *string <= '9')
-	{
-		if (res > INT_MAX / 10 || (res == INT_MAX / 10
-				&& (*string - '0') > INT_MAX % 10))
+		if ((*string == '-' || *string == '+') && has_sign++)
 			ft_exit_error(stack);
-		res = res * 10 + (*string - '0');
-		string++;
+		if (*string == '-' || *string == '+')
+			sign = (*string++ == '-') ? -1 : 1;
+		else if (*string >= '0' && *string <= '9')
+		{
+			if (res > INT_MAX / 10 || (res == INT_MAX / 10 && (*string - '0') > INT_MAX % 10))
+				ft_exit_error(stack);
+			res = res * 10 + (*string++ - '0');
+		}
+		else
+			ft_exit_error(stack);
 	}
-	return (res * signe);
+	return (res * sign);
 }
+
 
 void	print_stack(t_node **stack_a)
 {

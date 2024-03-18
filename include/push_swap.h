@@ -6,7 +6,7 @@
 /*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 16:24:05 by viny              #+#    #+#             */
-/*   Updated: 2024/03/18 12:20:54 by dperez-a         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:20:26 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdbool.h>
 # include <sys/types.h>
 # include <fcntl.h>
 # include "../libft/Libft/libft.h"
@@ -51,10 +52,10 @@ void	sort_three(t_node **stack_a);
 int		return_pos(t_node **stack);
 void	sort_pa_five_moove_i_three(t_node **stack_a);
 void	sort_pa_five_moove_i_four(t_node **stack_a);
-void	sort_pa_four(t_node **stack_a);
+//void	sort_pa_four(t_node **stack_a);
 void	sort_pa_five(t_node **stack_a);
 int		a_is_sorted(t_node *stack_a);
-int		ft_atoi_ovrflw(const char *string, t_node **stack);
+int		ft_atol_ovrflw(const char *string, t_node **stack);
 int		ft_strcmp(const char *s1, const char *s2);
 void	radix_sort(t_node **stack_a, t_node **stack_b, int argc);
 int		nb_node(t_node *stack);

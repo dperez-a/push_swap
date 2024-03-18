@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parcing.c                                          :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 17:14:13 by vnieto-j          #+#    #+#             */
-/*   Updated: 2024/03/18 12:25:30 by dperez-a         ###   ########.fr       */
+/*   Updated: 2024/03/18 17:12:47 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	ft_exit_error(t_node **stack)
 	exit(EXIT_FAILURE);
 }
 
-void	add_to_stack(t_node **stack, int the_nb)
+void	add_to_stack(t_node **stack, int nb)
 {
 	t_node	*new;
 
 	new = malloc(sizeof(t_node));
 	if (!new)
 		ft_exit_error(stack);
-	new->nb = the_nb;
+	new->nb = nb;
 	new->index = -1;
 	new->next = NULL;
 	ft_lstadd_back_ps(stack, new);
@@ -52,15 +52,15 @@ int	ft_is_dupplicate(t_node **stack)
 	return (0);
 }
 
-int	ft_check_argv_is_digit(char *string)
+int	ft_check_argv_is_digit(char *str)
 {
-	if (!string)
+	if (!str)
 		return (1);
-	while (*string != '\0')
+	while (*str != '\0')
 	{
-		if (!(*string >= '0' && *string <= '9') && *string != '-')
+		if (!(*str >= '0' && *str <= '9') && *str != '-')
 			return (1);
-		string++;
+		str++;
 	}
 	return (0);
 }
@@ -79,7 +79,7 @@ t_node	*ft_nb_to_stack(int argc, char **argv)
 			ft_exit_error(&stack);
 		else
 		{
-			nb = ft_atoi_ovrflw(argv[i], &stack);
+			nb = ft_atol_ovrflw(argv[i], &stack);
 			add_to_stack(&stack, nb);
 		}
 		i++;
