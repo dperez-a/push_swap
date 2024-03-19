@@ -6,7 +6,7 @@
 /*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:47:14 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/19 14:52:53 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2024/03/19 21:08:39 by dani_mm__        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	push_a(t_node **stack_a, t_node **stack_b);
 void	push_b(t_node **stack_a, t_node **stack_b);
 int		main(int argc, char **argv);
 void	add_to_stack(t_node **stack, int the_nb);
-int		ft_is_dupplicate(t_node **stack);
+int		ft_is_duplicate(t_node **stack);
 int		ft_check_argv_is_digit(char *string);
 t_node	*ft_nb_to_stack(int argc, char **argv);
 void	ft_sort_few(t_node **stack_a, t_node **stack_b, int argc);

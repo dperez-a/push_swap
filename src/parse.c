@@ -6,7 +6,7 @@
 /*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:25:11 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/19 15:00:58 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2024/03/19 21:09:36 by dani_mm__        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_is_dupplicate(t_node **stack)
 	return (0);
 }
 
-/*int	ft_check_argv_is_digit(char *str)
+int	ft_check_argv_is_digit(char *str)
 {
 	if (!str)
 		return (1);
@@ -63,33 +63,7 @@ int	ft_is_dupplicate(t_node **stack)
 		str++;
 	}
 	return (0);
-}*/
-int ft_check_argv_is_digit(char *str)
-{
-    int sign_count;
-    
-	sign_count = 0;
-	if (!str)
-        ft_exit_error(str); // Salir con error si el argumento es NULL
-    while (*str != '\0')
-	{
-        if (!(*str >= '0' && *str <= '9') && *str != '-' && *str != '+')
-		{
-            ft_exit_error(str); // Salir con error si el argumento no es válido
-        } 
-		else if (*str == '-' || *str == '+')
-		{
-            sign_count++;
-            if (sign_count > 1 || str != str)
-			{
-                ft_exit_error(str); // Salir con error si hay más de un signo o si el signo no está al principio
-            }
-        }
-        str++;
-    }
-    return 0; // Devolver 0 si el argumento es válido
 }
-
 
 t_node	*ft_nb_to_stack(int argc, char **argv)
 {
