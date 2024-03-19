@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vnieto-j <vnieto-j@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 13:35:18 by vnieto-j          #+#    #+#             */
-/*   Updated: 2023/04/26 20:56:23 by vnieto-j         ###   ########.fr       */
+/*   Created: 2024/03/19 11:26:36 by dani_mm__         #+#    #+#             */
+/*   Updated: 2024/03/19 11:26:38 by dani_mm__        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define NULL __null
 
 # include <stddef.h>
 # include <string.h>

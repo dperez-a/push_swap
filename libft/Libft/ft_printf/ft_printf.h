@@ -3,40 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vnieto-j <vnieto-j@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/28 15:17:10 by marvin            #+#    #+#             */
-/*   Updated: 2023/06/21 15:35:52 by vnieto-j         ###   ########.fr       */
+/*   Created: 2023/11/21 13:06:42 by dperez-a          #+#    #+#             */
+/*   Updated: 2024/03/19 11:13:09 by dani_mm__        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-
-# include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# include <unistd.h>
 # include <stdio.h>
-# define STD_OUT 1
 
-int			format(const char *str, int i, va_list arg);
-int			ft_printf(const char *str, ...);
-int			ft_strlen_printf(char *str);
-int			ft_putstr(char *str);
-int			ft_putstr(char *str);
-int			ft_print_char(char c);
-int			ft_print_str(char *str);
-int			ft_tcheck(int n);
-char		*ft_itoa(int n);
-int			ft_print_nbr(int n);
-int			ft_uputstr(char *str);
-int			ft_unsigned_tcheck(unsigned int n);
-char		*ft_unsigned_itoa(unsigned int n);
-int			ft_print_unsigned_nbr(unsigned int n);
-int			ft_hex_len(unsigned	int num);
-void		ft_put_hex(unsigned int num, const char format);
-int			ft_print_hex(unsigned int num, const char format);
-int			ptrbase(unsigned long num, char *base, int *len);
-int			put_ptr(void *ptr);
+# define HEX_UPP_BASE "0123456789ABCDEF"
+# define HEX_LOW_BASE "0123456789abcdef"
+
+int		ft_printf(char const *str, ...);
+
+void	ft_putchar_pf(char c, size_t *counter);
+void	ft_putstr_pf(char *str, size_t *counter);
+void	ft_putnbr_pf(int num, size_t *counter);
+void	ft_putuint_pf(unsigned int num, size_t *counter);
+void	ft_puthex_pf(unsigned int num, size_t *counter, char *base);
+void	ft_putptr_pf(void *ptr, size_t *counter);
+char	*ft_aux_pf(unsigned long long n, char *base);
 
 #endif

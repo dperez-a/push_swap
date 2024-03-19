@@ -46,12 +46,14 @@ SRC =	ft_isdigit.c	\
 		ft_lstmap.c \
 		get_next_line/get_next_line.c \
 		get_next_line/get_next_line_utils.c \
+		ft_printf/ft_aux_pf.c\
 		ft_printf/ft_printf.c \
-		ft_printf/ft_print_hexa.c \
-		ft_printf/ft_print_nbr.c \
-		ft_printf/ft_print_print.c \
-		ft_printf/ft_print_ptr.c \
-		ft_printf/ft_print_unsigned.c \
+		ft_printf/ft_putchar_pf.c \
+		ft_printf/ft_puthex_pf.c \
+		ft_printf/ft_putnbr_pf.c \
+		ft_printf/ft_putptr_pf.c \
+		ft_printf/ft_putstr_pf.c \
+		ft_printf/ft_pusuint_pf.c \
 
 OBJ = $(SRC:.c=.o)
 
