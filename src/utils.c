@@ -6,7 +6,7 @@
 /*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:26:03 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/19 11:26:05 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2024/03/19 14:55:25 by dani_mm__        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,51 @@ int	ft_atol_ovrflw(const char *string, t_node **stack)
 {
 	long	res;
 	long	sign;
-	int		has_sign;
 
-	res = 0;
 	sign = 1;
-	has_sign = 0;
-	if (!string || ft_strcmp(string, "-2147483648") == 0)
+	res = 0;
+	if (ft_strcmp(string, "-2147483648") == 0)
 		return (-2147483648);
-	while (*string != '\0')
+	if (*string == '-' || *string == '+')
 	{
-		if ((*string == '-' || *string == '+') && has_sign++)
+		if (*string == '-')
+			sign *= -1;
+		string++;
+	}
+	while (*string >= '0' && *string <= '9')
+	{
+		if (res > INT_MAX / 10 || (res == INT_MAX / 10
+				&& (*string - '0') > INT_MAX % 10))
 			ft_exit_error(stack);
-		if (*string == '-' || *string == '+')
-			sign = (*string++ == '-') ? -1 : 1;
-		else if (*string >= '0' && *string <= '9')
-		{
-			if (res > INT_MAX / 10 || (res == INT_MAX / 10 && (*string - '0') > INT_MAX % 10))
-				ft_exit_error(stack);
-			res = res * 10 + (*string++ - '0');
-		}
-		else
-			ft_exit_error(stack);
+		res = res * 10 + (*string - '0');
+		string++;
 	}
 	return (res * sign);
+} 
+
+int check_sign(int argc)
+{
+    int sign_count;
+	
+    sign_count = 0;
+    while (argc != '\0')
+	{
+        if (argc == '+' || argc == '-')
+		{
+            sign_count++;
+            if (sign_count > 1)
+			{
+                return 0; // false
+            }
+        } 
+		else if (argc < '0' || argc > '9')
+		{
+            // Carácter no válido
+            return 0; // false
+        }
+        argc++;
+    }
+    return 1; // true
 }
 
 
@@ -61,7 +83,7 @@ void	print_stack(t_node **stack_a)
 	temp = (*stack_a);
 	while (temp)
 	{
-		ft_printf("%d noeud = %d et index = %d\n", i, temp->nb, temp->index);
+		ft_printf("%d nodo = %d index = %d\n", i, temp->nb, temp->index);
 		i++;
 		temp = temp->next;
 	}

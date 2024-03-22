@@ -6,7 +6,7 @@
 /*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:47:14 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/18 18:47:17 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2024/03/20 15:40:42 by dani_mm__        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include <stdbool.h>
 # include <sys/types.h>
 # include <fcntl.h>
+# include <stddef.h>
 # include "../libft/Libft/libft.h"
 
 typedef struct s_node
@@ -43,7 +44,7 @@ void	push_a(t_node **stack_a, t_node **stack_b);
 void	push_b(t_node **stack_a, t_node **stack_b);
 int		main(int argc, char **argv);
 void	add_to_stack(t_node **stack, int the_nb);
-int		ft_is_dupplicate(t_node **stack);
+int		ft_is_duplicate(t_node **stack);
 int		ft_check_argv_is_digit(char *string);
 t_node	*ft_nb_to_stack(int argc, char **argv);
 void	ft_sort_few(t_node **stack_a, t_node **stack_b, int argc);
@@ -67,5 +68,7 @@ void	sort_four_five(t_node **stack_a, t_node **stack_b, int argc);
 void	find_small_and_pb(t_node **stack_a, t_node **stack_b, int argc);
 void	ft_push_index_zero(t_node **stack_a, t_node **stack_b, int count);
 void	ft_push_index_one(t_node **stack_a, t_node **stack_b, int count);
+int		check_sign(int argc);
+char	**split_string(const char *str);
 
 #endif
