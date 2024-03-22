@@ -53,7 +53,7 @@ SRC =	ft_isdigit.c	\
 		ft_printf/ft_putnbr_pf.c \
 		ft_printf/ft_putptr_pf.c \
 		ft_printf/ft_putstr_pf.c \
-		ft_printf/ft_pusuint_pf.c \
+		ft_printf/ft_putuint_pf.c \
 
 OBJ = $(SRC:.c=.o)
 
