@@ -6,7 +6,7 @@
 /*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:47:14 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/20 15:40:42 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2024/03/25 13:17:28 by dani_mm__        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,9 @@ void	ft_push_index_zero(t_node **stack_a, t_node **stack_b, int count);
 void	ft_push_index_one(t_node **stack_a, t_node **stack_b, int count);
 int		check_sign(int argc);
 char	**split_string(const char *str);
+void	sort_and_cleanup(t_node **stack_a, t_node **stack_b, int argc);
+void	process_arguments(int argc, char **argv, t_node **stack_a);
+void	initialize_stacks(t_node **stack_a, t_node **stack_b);
+void	handle_command_line_arguments(int argc);
 
 #endif
