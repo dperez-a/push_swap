@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_few.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
+/*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:25:50 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/19 11:25:52 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2025/02/11 13:21:11 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_sort_few(t_node **stack_a, t_node **stack_b, int argc)
 {
-	if (argc == 3)
+	if (argc == 2)
 		sort_two(stack_a);
-	else if (argc == 4)
+	else if (argc == 3)
 		sort_three(stack_a);
-	else if (argc == 5 || argc == 6)
+	else if (argc == 4 || argc == 5)
 		sort_four_five(stack_a, stack_b, argc);
 }
 
@@ -57,13 +57,13 @@ void	sort_three(t_node **stack_a)
 
 void	sort_four_five(t_node **stack_a, t_node **stack_b, int argc)
 {
-	if (argc == 5)
+	if (argc == 4)
 	{
 		find_small_and_pb(stack_a, stack_b, argc);
 		sort_three(stack_a);
 		push_a(stack_a, stack_b);
 	}
-	if (argc == 6)
+	if (argc == 5)
 	{
 		find_small_and_pb(stack_a, stack_b, argc);
 		sort_three(stack_a);
@@ -86,7 +86,7 @@ void	find_small_and_pb(t_node **stack_a, t_node **stack_b, int argc)
 			ft_push_index_zero(stack_a, stack_b, count);
 		temp = temp->next;
 	}
-	if (argc == 6)
+	if (argc == 5)
 	{
 		count = 0;
 		temp = (*stack_a);

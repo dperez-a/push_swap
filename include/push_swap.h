@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
+/*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 18:47:14 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/25 13:17:28 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2025/02/11 13:10:15 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,19 @@ int		main(int argc, char **argv);
 void	add_to_stack(t_node **stack, int the_nb);
 int		ft_is_duplicate(t_node **stack);
 int		ft_check_argv_is_digit(char *string);
-t_node	*ft_nb_to_stack(int argc, char **argv);
+t_node	*ft_nb_to_stack(int argc, char **argv, int i);
 void	ft_sort_few(t_node **stack_a, t_node **stack_b, int argc);
 void	sort_two(t_node **stack_a);
 void	sort_three(t_node **stack_a);
 int		return_pos(t_node **stack);
-void	sort_pa_five_moove_i_three(t_node **stack_a);
-void	sort_pa_five_moove_i_four(t_node **stack_a);
-//void	sort_pa_four(t_node **stack_a);
-void	sort_pa_five(t_node **stack_a);
+void	sort_pa_five_move_i_three(t_node **stack_a);
+void	sort_pa_five_move_i_four(t_node **stack_a);
+// void	sort_pa_four(t_node **stack_a);
+// void	sort_pa_five(t_node **stack_a);
 int		a_is_sorted(t_node *stack_a);
 int		ft_atol_ovrflw(const char *string, t_node **stack);
 int		ft_strcmp(const char *s1, const char *s2);
-void	radix_sort(t_node **stack_a, t_node **stack_b, int argc);
+void	radix_sort(t_node **stack_a, t_node **stack_b);
 int		nb_node(t_node *stack);
 int		ft_bits_len(int argc);
 void	print_stack(t_node **stack_a);
@@ -70,9 +70,12 @@ void	ft_push_index_zero(t_node **stack_a, t_node **stack_b, int count);
 void	ft_push_index_one(t_node **stack_a, t_node **stack_b, int count);
 int		check_sign(int argc);
 char	**split_string(const char *str);
-void	sort_and_cleanup(t_node **stack_a, t_node **stack_b, int argc);
+// void	sort_and_cleanup(t_node **stack_a, t_node **stack_b, int argc);
 void	process_arguments(int argc, char **argv, t_node **stack_a);
 void	initialize_stacks(t_node **stack_a, t_node **stack_b);
 void	handle_command_line_arguments(int argc);
+int		ft_nodesize(t_node *stack);
+void	ft_split_to_stack(t_node **stack, char **split);
+void	ft_free_strstr(char **str);
 
 #endif

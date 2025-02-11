@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
+/*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:26:03 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/19 14:55:25 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2025/02/11 12:51:21 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
-	{
-		s1++;
-		s2++;
-	}
-	return (*s1 - *s2);
-}
 
 int	ft_atol_ovrflw(const char *string, t_node **stack)
 {
@@ -46,33 +36,27 @@ int	ft_atol_ovrflw(const char *string, t_node **stack)
 		string++;
 	}
 	return (res * sign);
-} 
-
-int check_sign(int argc)
-{
-    int sign_count;
-	
-    sign_count = 0;
-    while (argc != '\0')
-	{
-        if (argc == '+' || argc == '-')
-		{
-            sign_count++;
-            if (sign_count > 1)
-			{
-                return 0; // false
-            }
-        } 
-		else if (argc < '0' || argc > '9')
-		{
-            // Carácter no válido
-            return 0; // false
-        }
-        argc++;
-    }
-    return 1; // true
 }
 
+int	check_sign(int argc)
+{
+	int	sign_count;
+
+	sign_count = 0;
+	while (argc != '\0')
+	{
+		if (argc == '+' || argc == '-')
+		{
+			sign_count++;
+			if (sign_count > 1)
+				return (0);
+		}
+		else if (argc < '0' || argc > '9')
+			return (0);
+		argc++;
+	}
+	return (1);
+}
 
 void	print_stack(t_node **stack_a)
 {

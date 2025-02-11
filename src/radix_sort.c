@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   radix_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
+/*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:25:25 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/19 11:25:27 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2025/02/11 11:40:27 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,20 @@ int	nb_node(t_node *stack)
 	return (i);
 }
 
-void	radix_sort(t_node **stack_a, t_node **stack_b, int argc)
+void	radix_sort(t_node **stack_a, t_node **stack_b)
 {
-	int	i;
+	int	size;
 	int	bits;
-	int	arg;
+	int	i;
+	int	j;
 
 	i = 0;
-	bits = ft_bits_len(argc);
+	size = ft_nodesize(*stack_a);
+	bits = ft_bits_len(size);
 	while (i < bits)
 	{
-		arg = argc - 1;
-		while (arg--)
+		j = size;
+		while (j--)
 		{
 			if (((*stack_a)->index >> i & 1) == 0)
 				push_b(stack_a, stack_b);

@@ -6,7 +6,7 @@
 /*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 13:05:47 by dperez-a          #+#    #+#             */
-/*   Updated: 2023/11/23 12:11:02 by dperez-a         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:47:15 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	ft_putuint_pf(unsigned int num, size_t *counter)
 {
-	char			*str;
+	char	*str;
 
 	str = ft_aux_pf(num, "0123456789");
-    ft_putstr_pf(str, counter);
-    free(str);
+	ft_putstr_pf(str, counter);
+	free(str);
 }
 /*int main()
 {

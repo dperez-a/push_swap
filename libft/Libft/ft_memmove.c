@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dani_mm__ <dani_mm__@student.42.fr>        +#+  +:+       +#+        */
+/*   By: dperez-a <dperez-a@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 11:22:41 by dani_mm__         #+#    #+#             */
-/*   Updated: 2024/03/19 11:22:42 by dani_mm__        ###   ########.fr       */
+/*   Updated: 2025/02/11 12:45:23 by dperez-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h" 
+#include "libft.h" 
 
 void	*ft_memmove(void *dest, const void *src, size_t	n)
 {
@@ -24,15 +24,15 @@ void	*ft_memmove(void *dest, const void *src, size_t	n)
 		while (n > 0)
 		{
 			((unsigned char *)dest)[n -1] = ((unsigned char *)src)[n - 1];
-		n --;
+			n--;
 		}
 	}
 	else
 	{
 		while (i < n)
 		{
-		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
-		i++;
+			((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+			i++;
 		}
 	}
 	return (dest);
